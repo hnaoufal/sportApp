@@ -1,0 +1,8 @@
+{
+  "users" : [
+    { "id": "24", "firstName": "Hicham", "lastName": "Naoufal", "age": 31},
+    { "id": "25", "firstName": "Hiba", "lastName": "Naoufal", "age": 29},
+    { "id": "23", "firstName": "Ala", "lastName": "Naoufal", "age": 27},
+    { "id": "26", "firstName": "Susanna", "lastName": "Naoufal", "age": 26}
+  ]
+}
