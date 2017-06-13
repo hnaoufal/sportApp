@@ -1,8 +1,13 @@
 {
   "users" : [
-    { "id": "24", "firstName": "Hicham", "lastName": "Naoufal", "age": 31},
-    { "id": "25", "firstName": "Hiba", "lastName": "Naoufal", "age": 29},
-    { "id": "23", "firstName": "Ala", "lastName": "Naoufal", "age": 27},
-    { "id": "26", "firstName": "Susanna", "lastName": "Naoufal", "age": 26}
+    { "id": "24", "firstName": "Hicham", "lastName": "Naoufal", "age": 31, "companyId": "1" },
+    { "id": "25", "firstName": "Hiba", "lastName": "Naoufal", "age": 29, "companyId": "1" },
+    { "id": "23", "firstName": "Ala", "lastName": "Naoufal", "age": 27, "companyId": "2" },
+    { "id": "26", "firstName": "Susanna", "lastName": "Naoufal", "age": 26, "companyId": "1" },
+    { "id": "27", "firstName": "Ahmad", "lastName": "Naoufal", "age": 20, "companyId": "2"  }
+  ],
+  "companies": [
+    { "id": "1", "name": "Apple", "description": "iphone" },
+    { "id": "2", "name": "Google", "description": "search" }
   ]
 }
