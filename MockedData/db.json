@@ -9,5 +9,10 @@
   "companies": [
     { "id": "1", "name": "Apple", "description": "iphone" },
     { "id": "2", "name": "Google", "description": "search" }
+  ],
+  "events": [
+    { "id": "1", "name": "Handball", "address": "Bolzplatz Wedding", "date": "27.06.2017", "starttime": "17:30", "endtime": "19:30", "members": 3, "maxMembers": 12  },
+    { "id": "2", "name": "Fussball", "address": "Triftstr. 32", "date": "01.07.2017", "starttime": "12:30", "endtime": "14:30", "members": 1, "maxMembers": 9  },
+    { "id": "2", "name": "Basketball", "address": "Triftstr. 32", "date": "01.07.2017", "starttime": "12:30", "endtime": "14:30", "members": 1, "maxMembers": 9  }
   ]
 }

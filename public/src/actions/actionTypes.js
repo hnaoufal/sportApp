@@ -1,0 +1,2 @@
+export const FETCH_EVENTS = 'FETCH_EVENTS';
+export const FETCH_QUESTION = 'FETCH_QUESTION';
