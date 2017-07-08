@@ -1,6 +1,7 @@
 const express = require('express');
 const expressGraphQL = require('express-graphql');
 const schema = require('./schema/schema');
+const PORT = 30000;
 
 const app = express();
 
@@ -9,6 +10,8 @@ app.use('/graphql', expressGraphQL({
     graphiql: true
 }));
 
-app.listen(30000, () => {
-    console.log("Server is running on Port 30000");
+app.use('/', express.static('client'));
+
+app.listen(PORT, () => {
+    console.log(`Der Server wurde auf Port = ${PORT}`);
 });
