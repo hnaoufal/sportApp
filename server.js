@@ -10,5 +10,5 @@ app.use('/graphql', expressGraphQL({
 }));
 
 app.listen(30000, () => {
-    console.log("Hello World!");
+    console.log("Server is running on Port 30000");
 });
