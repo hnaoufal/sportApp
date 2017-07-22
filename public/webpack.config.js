@@ -1,8 +1,10 @@
+const path = require('path');
+
 module.exports = {
     entry: './src/app.js',
     output: {
-        path: __dirname,
-        publicPath: '/',
+        path: path.join(__dirname, './dist/assets'),
+        publicPath: '/dist/assets/',
         filename: 'bundle.js'
     },
     module: {
@@ -19,6 +21,7 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
+        publicPath: '/dist/assets/',
         contentBase: './'
     }
 };
