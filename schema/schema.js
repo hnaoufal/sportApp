@@ -37,7 +37,7 @@ const UserType = new GraphQLObjectType({
         company: {
             type: CompanyType,
             resolve(parent, args) {
-                return axios.get(`http://localhost:3000/companies/${parent.companyId}`)
+                return axios.get(`http://localhost:30000/events/${parent.companyId}`)
                     .then(res => res.data);
             }
         }
@@ -52,7 +52,7 @@ const RootQuery = new GraphQLObjectType({
             type: UserType,
             args: { id: { type: GraphQLString } },
             resolve(parent, args) {
-                return axios.get(`http://localhost:3000/users/${args.id}`)
+                return axios.get(`http://localhost:30000/users/${args.id}`)
                     .then(resp => resp.data);
             }
         },
@@ -60,7 +60,7 @@ const RootQuery = new GraphQLObjectType({
             type: CompanyType,
             args: { id: { type: GraphQLString } },
             resolve(parent, args) {
-                return axios.get(`http://localhost:3000/companies/${args.id}`)
+                return axios.get(`http://localhost:30000/events/${args.id}`)
                     .then(resp => resp.data);
             }
         }
@@ -78,7 +78,7 @@ const mutation = new GraphQLObjectType({
                 companyId: { type: GraphQLString}
             },
             resolve(parentValue, args) {
-                return axios.post('http://localhost:3000/users', { firstName: args.firstName, age: args.age })
+                return axios.post('http://localhost:30000/users', { firstName: args.firstName, age: args.age })
                     .then( res => res.data);
             }
         },
@@ -88,7 +88,7 @@ const mutation = new GraphQLObjectType({
                 id: { type: new GraphQLNonNull(GraphQLString)}
             },
             resolve(parentValue, args) {
-                return axios.delete(`http://localhost:3000/users/${args.id}`)
+                return axios.delete(`http://localhost:30000/users/${args.id}`)
                     .then(resp => resp.data);
             }
 
