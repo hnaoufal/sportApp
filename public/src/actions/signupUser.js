@@ -11,4 +11,3 @@ export function signupUser({ email, password }) {
             .catch(response => dispatch(authError(response.data.error)));
     }
 }
-
