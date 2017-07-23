@@ -13,7 +13,7 @@ class Login extends Component {
     componentWillReceiveProps(props) {
         console.log('test: ', props);
         if(props.authenticated.authenticated) {
-            this.props.history.push('/create');
+            this.props.history.push('/loggedIn');
         }
     }
 
