@@ -9,6 +9,7 @@ const cors = require('cors');
 const Authentication = require('./controllers/authentication');
 const passport = require('passport');
 const passportService = require('./services/passport');
+const GithubOAuth = require('./services/GithubOAuth');
 
 const requireAuth   = passport.authenticate('jwt', {session: false});
 
@@ -57,6 +58,16 @@ app.get('/users', (req,res) => {
         res.send(user);
     });
 });
+
+app.get('/auth/github',
+    passport.authenticate('github'));
+
+app.get('/auth/github/callback',
+    passport.authenticate('github', { failureRedirect: '/login' }),
+    function(req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/');
+    });
 
 app.post('/signup', jsonParser, Authentication.signup);
 app.post('/signin', jsonParser, Authentication.signin);
