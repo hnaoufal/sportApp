@@ -12,6 +12,7 @@ const passportService = require('./services/passport');
 const GithubOAuth = require('./services/GithubOAuth');
 
 const requireAuth   = passport.authenticate('jwt', {session: false});
+const requireSignin = passport.authenticate('local', { session: false });
 
 mongoose.Promise = global.Promise;
 mongoose.connection.openUri('mongodb://hichamn:hicham.naoufal@ds115573.mlab.com:15573/sportsapp');
@@ -69,8 +70,10 @@ app.get('/auth/github/callback',
         res.redirect('/');
     });
 
-app.post('/signup', jsonParser, Authentication.signup);
-app.post('/signin', jsonParser, Authentication.signin);
+app.use('/signin', jsonParser);
+
+app.post('/signup',  jsonParser, Authentication.signup);
+app.post('/signin', requireSignin,  Authentication.signin);
 
 app.get('/events', (req,res) => {
     Event.find( (err, event) => {

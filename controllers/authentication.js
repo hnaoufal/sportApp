@@ -3,6 +3,7 @@ const User = require('../models/users');
 
 function tokenForUser(user) {
     const timestamp = new Date().getTime();
+    console.log(user.id);
     return jwt.encode({sub: user.id, iat: timestamp}, 'ohenuhoenuhoeu');
 }
 
